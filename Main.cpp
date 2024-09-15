@@ -16,16 +16,11 @@ namespace WordList{
 class Session {
 private:
     std::string m_word{WordList::getRandomWorld()};
-    std::vector<char> m_letter{};
 
 public:
     std::string_view getWord() const{return m_word;}
 
-    std::vector<char> setLetter(char letter) {
-        for (std::size_t i{0}; i < m_letter.size(); ++i) {
-            m_letter[i] = letter;
-        }
-    }
+    
 };
 
 void ignoreLine() {
@@ -57,8 +52,6 @@ char getUserInput(Session& s) {
 
         break;
     }
-
-    s.setLetter(input);
 
     return input;
 }
